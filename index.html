@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Лаборатори 06 - Gallery Portal & CSS3 Animations</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <!-- Inline SVG Icon -->
+        <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor">
+          <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/>
+        </svg>
+        <span>EduGallery</span>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-links">
+          <li><a href="#" class="active">Галерей</a></li>
+          <li><a href="#video-section">Видео медиа</a></li>
+        </ul>
+        <div class="header-actions">
+          <!-- Dark Mode Toggle Button -->
+          <button id="themeToggle" class="btn-theme" aria-label="Сэдэв солих">
+            <svg class="sun-icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0 1 .45 1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1z"/></svg>
+            <span id="themeLabel">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Интерактив Зургийн Цомог & Медиа Портал</h1>
+      <p>CSS3 Animation, Transform, 3D Flip ба Сэдэв тохируулагчтай медиа сан</p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <div class="page-container">
+    <main class="main-content">
+      <div class="section-header">
+        <h2>Онцлох зургийн цомог (3D Flip Cards)</h2>
+      </div>
+
+      <!-- Gallery Grid with CSS Custom Property (--i) for Stagger Animation -->
+      <div class="gallery-grid">
+
+        <!-- Card 1 -->
+        <div class="flip-card" style="--i: 1;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo1.jpg" alt="Веб хөгжүүлэлтийн дизайн" loading="lazy">
+              <div class="card-caption">
+                <h3>HTML5 & CSS3</h3>
+                <span class="badge">UI/UX</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>Семантик бүтэц болон CSS Grid, Flexbox ашиглан бэлтгэсэн сургалтын модуль.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flip-card" style="--i: 2;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo2.jpg" alt="Програмчлал ба Алгоритм" loading="lazy">
+              <div class="card-caption">
+                <h3>Python Science</h3>
+                <span class="badge">Data</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>NumPy ба Pandas сангуудыг ашиглан өгөгдөл боловсруулах практик ажил.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flip-card" style="--i: 3;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo3.jpg" alt="Микроконтроллер ба мэдрэгч" loading="lazy">
+              <div class="card-caption">
+                <h3>ESP32 IoT</h3>
+                <span class="badge">Hardware</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>MQ-2 болон OLED дэлгэцтэй ухаалаг систем бүтээх лаборатори.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flip-card" style="--i: 4;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo4.jpg" alt="Java ба ООП" loading="lazy">
+              <div class="card-caption">
+                <h3>Java & ООП</h3>
+                <span class="badge">Backend</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>Объект хандлагат програмчлалын зарчмууд болон өгөгдлийн бүтэц.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Multimedia Section -->
+      <section id="video-section" class="multimedia-section">
+        <h2>Мультимедиа & Сургалтын Видео</h2>
+        
+        <div class="media-grid">
+          <!-- HTML5 Video with multiple sources and subtitle track -->
+          <div class="media-box">
+            <h3>Төслийн танилцуулга (HTML5 Video)</h3>
+            <video controls width="100%" poster="img/photo1.jpg">
+              <source src="video/clip.mp4" type="video/mp4">
+              <source src="video/clip.webm" type="video/webm">
+              <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол хадмал" default>
+              Таны хөтөч видео тоглохыг дэмжихгүй байна.
+            </video>
+          </div>
+
+          <!-- Responsive iFrame (YouTube Embed) -->
+          <div class="media-box">
+            <h3>Онлайн хичээл (iFrame Embedded)</h3>
+            <div class="iframe-container">
+              <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Сургалтын видео" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 Лаборатори 06. CSS3 Animation & Multimedia Portal.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
