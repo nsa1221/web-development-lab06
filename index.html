@@ -1,20 +1,24 @@
 <!DOCTYPE html>
-<html lang="mn">
+<html lang="mn" data-theme="dark">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаборатори 06 - 3D Flip Cards & Multimedia EduHub</title>
+  <title>Лаборатори 06 - EduHub Dark/Light Mode Portal</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Top View Mode Toolbar (Wireframe / Desktop Switcher) -->
+  <!-- Top View Mode Toolbar -->
   <div class="wireframe-toolbar">
     <span class="toolbar-title">Lab 06 Interactive Portal</span>
     <div class="toolbar-btns">
-      <button class="tb-btn active" id="btnMobile">📱 Утасны Wireframe</button>
-      <button class="tb-btn" id="btnDesktop">💻 Бүтэн дэлгэц</button>
+      <!-- Dark/Light Mode Switcher -->
+      <button class="tb-btn theme-toggle-btn" id="themeToggleBtn">
+        <i class="fa-solid fa-moon" id="themeIcon"></i> <span id="themeText">Dark Mode: ON</span>
+      </button>
+      <button class="tb-btn active" id="btnMobile">📱 Утас</button>
+      <button class="tb-btn" id="btnDesktop">💻 Компьютер</button>
     </div>
   </div>
 
@@ -56,7 +60,7 @@
         <section class="hero-section">
           <div class="hero-content">
             <h1>Мэдээллийн Технологийн Онлайн Сургалт</h1>
-            <p>CSS3 3D Animation, Transform ба Мультимедиа нэгтгэсэн интерактив портал.</p>
+            <p>CSS3 3D Animation, Dark/Light Mode болон Мультимедиа нэгтгэсэн интерактив портал.</p>
           </div>
         </section>
 
@@ -68,7 +72,7 @@
               <h2>Онцлох хичээлүүд (3D Flip Cards)</h2>
             </div>
             
-            <!-- 3D FLIP CARDS GRID (Lab 06 Requirement) -->
+            <!-- 3D FLIP CARDS GRID -->
             <div class="card-grid">
               
               <!-- Card 1 -->
@@ -145,12 +149,11 @@
 
             </div>
 
-            <!-- MULTIMEDIA SECTION (Lab 06 Requirement) -->
+            <!-- MULTIMEDIA SECTION -->
             <section id="media-section" class="multimedia-section">
               <h2>Мультимедиа & Сургалтын Видео</h2>
               
               <div class="media-grid">
-                <!-- HTML5 Video element -->
                 <div class="media-box">
                   <h3>Видео танилцуулга</h3>
                   <video controls width="100%">
@@ -161,7 +164,6 @@
                   </video>
                 </div>
 
-                <!-- Responsive iFrame (YouTube Embed) -->
                 <div class="media-box">
                   <h3>Онлайн лекц (iFrame)</h3>
                   <div class="iframe-container">
@@ -186,7 +188,7 @@
               <ul class="widget-list">
                 <li>
                   <span class="date">10 Сар 12</span>
-                  <p>Лаборатори 06 анимацийн шаардлага нэмэгдлээ.</p>
+                  <p>Dark mode (Хар/Ягаан) болон Light mode (Цэнхэр/Шаргал) шилжүүлэгч нэмэгдлээ.</p>
                 </li>
                 <li>
                   <span class="date">10 Сар 10</span>
@@ -206,45 +208,10 @@
       </div>
       
       <div class="phone-home-bar"></div>
-    </div> <!-- End Mockup Frame -->
+    </div>
 
-  </div> <!-- End Viewport -->
+  </div>
 
-  <!-- SCRIPTS -->
-  <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const navbar = document.getElementById('navbar');
-
-    menuToggle.addEventListener('click', () => {
-      navbar.classList.toggle('nav-open');
-    });
-
-    const btnMobile = document.getElementById('btnMobile');
-    const btnDesktop = document.getElementById('btnDesktop');
-    const deviceViewport = document.getElementById('deviceViewport');
-
-    btnMobile.addEventListener('click', () => {
-      deviceViewport.classList.remove('desktop-view');
-      deviceViewport.classList.add('phone-view');
-      btnMobile.classList.add('active');
-      btnDesktop.classList.remove('active');
-    });
-
-    btnDesktop.addEventListener('click', () => {
-      deviceViewport.classList.remove('phone-view');
-      deviceViewport.classList.add('desktop-view');
-      btnDesktop.classList.add('active');
-      btnMobile.classList.remove('active');
-    });
-
-    // Mobile / Touch support for 3D flip card toggle button
-    document.querySelectorAll('.flip-back-btn').forEach(btn => {
-      btn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        const card = btn.closest('.flip-card');
-        card.classList.toggle('is-flipped');
-      });
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>

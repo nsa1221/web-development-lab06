@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
 
-:root {
+/* ==========================================
+   THEME 1: DARK MODE (Хар хөх ба Тод Ягаан)
+   ========================================== */
+:root[data-theme="dark"] {
   --bg-color: #0b0f19;
   --card-bg: #111827;
   --text-color: #f3f4f6;
@@ -9,7 +12,28 @@
   --primary: #db2777;           /* Neon Pink */
   --accent-color: #8b5cf6;      /* Violet */
   --border-color: #1f2937;
-  --card-shadow: rgba(0, 0, 0, 0.5);
+  --card-shadow: rgba(0, 0, 0, 0.6);
+  --mockup-bg: #111827;
+  --btn-grad: linear-gradient(135deg, #db2777, #8b5cf6);
+  --hero-grad: linear-gradient(135deg, #0f172a 0%, #31103f 100%);
+}
+
+/* ==========================================
+   THEME 2: LIGHT MODE (Цэнхэр ба Шаргал / Gold)
+   ========================================== */
+:root[data-theme="light"] {
+  --bg-color: #f0f6fc;
+  --card-bg: #ffffff;
+  --text-color: #1e293b;
+  --text-muted: #64748b;
+  --header-bg: #1e3a8a;         /* Deep Blue */
+  --primary: #2563eb;           /* Bright Blue */
+  --accent-color: #d97706;      /* Warm Gold / Amber */
+  --border-color: #cbd5e1;
+  --card-shadow: rgba(30, 58, 138, 0.1);
+  --mockup-bg: #e2e8f0;
+  --btn-grad: linear-gradient(135deg, #2563eb, #d97706);
+  --hero-grad: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #f59e0b 100%);
 }
 
 * {
@@ -25,6 +49,7 @@ html, body {
   background-color: var(--bg-color);
   font-family: 'Plus Jakarta Sans', sans-serif;
   color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 /* Wireframe Toolbar */
@@ -38,12 +63,13 @@ html, body {
   position: sticky;
   top: 0;
   z-index: 3000;
+  transition: background-color 0.3s ease;
 }
 
 .toolbar-title {
   font-size: 14px;
   font-weight: 700;
-  color: #f472b6;
+  color: var(--accent-color);
 }
 
 .toolbar-btns {
@@ -54,7 +80,7 @@ html, body {
 .tb-btn {
   background: var(--card-bg);
   border: 1px solid var(--border-color);
-  color: var(--text-muted);
+  color: var(--text-color);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 12px;
@@ -64,9 +90,13 @@ html, body {
 }
 
 .tb-btn.active, .tb-btn:hover {
-  background: linear-gradient(135deg, #db2777, #8b5cf6);
+  background: var(--btn-grad);
   color: #fff;
   border-color: transparent;
+}
+
+.theme-toggle-btn {
+  border-color: var(--primary);
 }
 
 /* Device Viewport Wrapper */
@@ -83,10 +113,10 @@ html, body {
 .device-viewport.phone-view .phone-mockup-frame {
   width: 380px;
   height: 760px;
-  background: #111827;
+  background: var(--mockup-bg);
   border-radius: 40px;
   padding: 14px;
-  box-shadow: 0 25px 50px rgba(0,0,0,0.8), 0 0 0 4px #1f2937;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.4), 0 0 0 4px var(--border-color);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -120,7 +150,7 @@ html, body {
   margin-top: 10px;
 }
 
-/* Desktop Fullscreen Mode */
+/* Desktop Mode */
 .device-viewport.desktop-view {
   padding: 0;
   align-items: flex-start;
@@ -148,7 +178,7 @@ html, body {
 
 
 /* ==========================================
-   LAB 06: 3D FLIP CARDS & ANIMATIONS
+   3D FLIP CARDS & STAGGER ANIMATIONS
    ========================================== */
 .card-grid {
   display: grid;
@@ -159,10 +189,10 @@ html, body {
 .flip-card {
   background-color: transparent;
   height: 220px;
-  perspective: 1000px; /* 3D perspective */
+  perspective: 1000px;
   opacity: 0;
   animation: fadeInUp 0.6s ease forwards;
-  animation-delay: calc(var(--i) * 0.15s); /* Stagger animation */
+  animation-delay: calc(var(--i) * 0.15s);
 }
 
 .flip-card-inner {
@@ -176,7 +206,6 @@ html, body {
   box-shadow: 0 4px 16px var(--card-shadow);
 }
 
-/* Hover or JS trigger for 3D flip */
 .flip-card:hover .flip-card-inner,
 .flip-card.is-flipped .flip-card-inner {
   transform: rotateY(180deg);
@@ -210,7 +239,7 @@ html, body {
 
 .card-icon {
   font-size: 40px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .card-tag {
@@ -220,10 +249,10 @@ html, body {
   font-size: 11px;
 }
 
-.bg-gradient-1 { background: linear-gradient(135deg, #db2777, #f472b6); }
-.bg-gradient-2 { background: linear-gradient(135deg, #7c3aed, #a78bfa); }
-.bg-gradient-3 { background: linear-gradient(135deg, #0284c7, #38bdf8); }
-.bg-gradient-4 { background: linear-gradient(135deg, #059669, #34d399); }
+.bg-gradient-1 { background: var(--btn-grad); }
+.bg-gradient-2 { background: linear-gradient(135deg, #7c3aed, #ec4899); }
+.bg-gradient-3 { background: linear-gradient(135deg, #0284c7, #2563eb); }
+.bg-gradient-4 { background: linear-gradient(135deg, #059669, #d97706); }
 
 .flip-card-back {
   background-color: var(--card-bg);
@@ -249,7 +278,7 @@ html, body {
 }
 
 .flip-back-btn {
-  background: linear-gradient(135deg, #db2777, #8b5cf6);
+  background: var(--btn-grad);
   color: #fff;
   border: none;
   padding: 6px 14px;
@@ -258,7 +287,6 @@ html, body {
   cursor: pointer;
 }
 
-/* Keyframes Stagger Animation */
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -270,20 +298,7 @@ html, body {
   }
 }
 
-/* Prefers Reduced Motion Rule */
-@media (prefers-reduced-motion: reduce) {
-  *, ::before, ::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
-  .flip-card { opacity: 1; }
-}
-
-
-/* ==========================================
-   LAB 06: MULTIMEDIA SECTION
-   ========================================== */
+/* Multimedia Section */
 .multimedia-section {
   margin-top: 40px;
 }
@@ -313,12 +328,11 @@ html, body {
 
 .media-box video {
   border-radius: 8px;
-  outline: none;
 }
 
 .iframe-container {
   position: relative;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  padding-bottom: 56.25%;
   height: 0;
   overflow: hidden;
   border-radius: 8px;
@@ -332,16 +346,14 @@ html, body {
   height: 100%;
 }
 
-
-/* ==========================================
-   GENERAL SITE STYLES
-   ========================================== */
+/* Site Elements */
 .site-header {
   background-color: var(--header-bg);
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--border-color);
+  transition: background-color 0.3s ease;
 }
 
 .header-container {
@@ -354,7 +366,7 @@ html, body {
 .logo {
   font-size: 18px;
   font-weight: 700;
-  color: #f472b6;
+  color: var(--accent-color);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -363,7 +375,7 @@ html, body {
 .menu-toggle {
   background: transparent;
   border: none;
-  color: #f472b6;
+  color: var(--primary);
   font-size: 20px;
   cursor: pointer;
 }
@@ -374,7 +386,7 @@ html, body {
   top: 100%;
   left: 0;
   width: 100%;
-  background-color: #070a12;
+  background-color: var(--header-bg);
   padding: 16px;
   border-bottom: 1px solid var(--border-color);
   flex-direction: column;
@@ -399,7 +411,7 @@ html, body {
 }
 
 .nav-links a.active, .nav-links a:hover {
-  color: #f472b6;
+  color: var(--accent-color);
 }
 
 .header-actions {
@@ -408,8 +420,30 @@ html, body {
   gap: 8px;
 }
 
+.btn-primary, .btn-secondary {
+  width: 100%;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  font-size: 13px;
+}
+
+.btn-primary {
+  background: var(--btn-grad);
+  color: #fff;
+  border: none;
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
 .hero-section {
-  background: linear-gradient(135deg, #0f172a 0%, #31103f 100%);
+  background: var(--hero-grad);
   color: white;
   padding: 24px 16px;
   text-align: center;
@@ -421,7 +455,7 @@ html, body {
 }
 
 .hero-content p {
-  color: #cbd5e1;
+  color: #e2e8f0;
   font-size: 11px;
 }
 
@@ -442,6 +476,7 @@ html, body {
   padding: 14px;
   border-radius: 10px;
   border: 1px solid var(--border-color);
+  box-shadow: 0 2px 8px var(--card-shadow);
 }
 
 .sidebar-widget h3 {
@@ -461,7 +496,7 @@ html, body {
 }
 
 .widget-list .date {
-  color: #f472b6;
+  color: var(--accent-color);
   font-weight: 600;
 }
 
@@ -475,10 +510,7 @@ html, body {
   margin-top: 20px;
 }
 
-
-/* ==========================================
-   DESKTOP VIEW MODE
-   ========================================== */
+/* Desktop View Overrides */
 .device-viewport.desktop-view .menu-toggle {
   display: none;
 }
@@ -501,6 +533,11 @@ html, body {
 
 .device-viewport.desktop-view .header-actions {
   flex-direction: row;
+}
+
+.device-viewport.desktop-view .btn-primary,
+.device-viewport.desktop-view .btn-secondary {
+  width: auto;
 }
 
 .device-viewport.desktop-view .hero-section {

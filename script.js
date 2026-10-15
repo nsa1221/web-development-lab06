@@ -1,4 +1,4 @@
-// 1. Dark / Light Mode Toggle Logic
+// 1. Dark / Light Mode Toggle Logic (ON / OFF)
 const themeToggleBtn = document.getElementById('themeToggleBtn');
 const themeIcon = document.getElementById('themeIcon');
 const themeText = document.getElementById('themeText');
@@ -9,11 +9,11 @@ themeToggleBtn.addEventListener('click', () => {
   if (currentTheme === 'dark') {
     htmlElement.setAttribute('data-theme', 'light');
     themeIcon.className = 'fa-solid fa-sun';
-    themeText.textContent = 'Dark Mode';
+    themeText.textContent = 'Light Mode: ON';
   } else {
     htmlElement.setAttribute('data-theme', 'dark');
     themeIcon.className = 'fa-solid fa-moon';
-    themeText.textContent = 'Light Mode';
+    themeText.textContent = 'Dark Mode: ON';
   }
 });
 
@@ -24,7 +24,7 @@ menuToggle.addEventListener('click', () => {
   navbar.classList.toggle('nav-open');
 });
 
-// 3. Wireframe / Viewport Mode Switcher (Утас болон Компьютер горим солих)
+// 3. Wireframe / Viewport Mode Switcher (Утас болон Компьютер горим)
 const btnMobile = document.getElementById('btnMobile');
 const btnDesktop = document.getElementById('btnDesktop');
 const deviceViewport = document.getElementById('deviceViewport');
@@ -43,7 +43,7 @@ btnDesktop.addEventListener('click', () => {
   btnMobile.classList.remove('active');
 });
 
-// 4. 3D Flip Card Toggle Button (Таблет/Утас дээр дарж эргүүлэх)
+// 4. 3D Flip Card Toggle Button
 document.querySelectorAll('.flip-back-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
     e.stopPropagation();
