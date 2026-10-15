@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="mn" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduHub - Онлайн Сургалтын Платформ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Header & Navigation -->
+  <header class="site-header">
+    <div class="header-container">
+      <div class="logo">
+        <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor">
+          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
+        </svg>
+        <span>EduHub</span>
+      </div>
+
+      <nav class="navbar" id="navbar">
+        <ul class="nav-links">
+          <li><a href="#" class="active">Нүүр</a></li>
+          <li><a href="#gallery">Хичээлүүд</a></li>
+          <li><a href="#video-section">Медиа сан</a></li>
+        </ul>
+        <div class="header-actions">
+          <button id="themeToggle" class="btn-theme" aria-label="Сэдэв солих">
+            <span id="themeLabel">Dark Mode</span>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Мэдээллийн Технологийн Онлайн Сургалт</h1>
+      <p>Програмчлал, веб хөгжүүлэлт болон систем инженерчлэлийн чадвараа академик түвшинд ахиулаарай.</p>
+    </div>
+  </section>
+
+  <!-- Main Content Area -->
+  <div class="page-container">
+    <main class="main-content">
+      <div class="section-header" id="gallery">
+        <h2>Онцлох сургалтын модуль ба 3D галерей</h2>
+      </div>
+
+      <!-- Gallery Grid with 3D Flip Cards & Stagger Animation -->
+      <div class="gallery-grid">
+
+        <!-- Card 1 -->
+        <div class="flip-card" style="--i: 1;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo1.jpg" alt="Веб хөгжүүлэлт" loading="lazy">
+              <div class="card-caption">
+                <h3>HTML5 & CSS3</h3>
+                <span class="badge">Front-End</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>Семантик бүтэц, Flexbox болон Grid ашиглан адаптив вэб бүтээх.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="flip-card" style="--i: 2;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo2.jpg" alt="Програмчлал" loading="lazy">
+              <div class="card-caption">
+                <h3>Python & Data</h3>
+                <span class="badge">Analytics</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>NumPy, Pandas болон өгөгдөл боловсруулах практик курсууд.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="flip-card" style="--i: 3;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo3.jpg" alt="Систем инженерчлэл" loading="lazy">
+              <div class="card-caption">
+                <h3>ESP32 IoT</h3>
+                <span class="badge">Hardware</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>Мэдрэгч, OLED дэлгэц болон ухаалаг систем холболтын лаборатори.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="flip-card" style="--i: 4;">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="img/photo4.jpg" alt="Програм хангамж" loading="lazy">
+              <div class="card-caption">
+                <h3>Java & OOP</h3>
+                <span class="badge">Backend</span>
+              </div>
+            </div>
+            <div class="flip-card-back">
+              <h3>Дэлгэрэнгүй</h3>
+              <p>Объект хандлагат програмчлалын зарчим болон алгоритмын үндэс.</p>
+              <button class="flip-btn">Буцах</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Multimedia Section -->
+      <section id="video-section" class="multimedia-section">
+        <h2>Мультимедиа & Сургалтын Видео</h2>
+        
+        <div class="media-grid">
+          <div class="media-box">
+            <h3>Видео танилцуулга (HTML5 Video)</h3>
+            <video controls width="100%" poster="img/photo1.jpg">
+              <source src="video/clip.mp4" type="video/mp4">
+              <source src="video/clip.webm" type="video/webm">
+              <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол" default>
+              Таны хөтөч видеог дэмжихгүй байна.
+            </video>
+          </div>
+
+          <div class="media-box">
+            <h3>Онлайн лекц (iFrame Embedded)</h3>
+            <div class="iframe-container">
+              <iframe 
+                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                title="Сургалтын видео" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; 2026 EduHub - Мэдээллийн Технологийн Сургууль.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
