@@ -1,167 +1,250 @@
 <!DOCTYPE html>
-<html lang="mn" data-theme="dark">
+<html lang="mn">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>EduHub - Онлайн Сургалтын Платформ</title>
+  <title>Лаборатори 06 - 3D Flip Cards & Multimedia EduHub</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-  <!-- Header & Navigation -->
-  <header class="site-header">
-    <div class="header-container">
-      <div class="logo">
-        <svg class="logo-icon" viewBox="0 0 24 24" width="28" height="28" aria-hidden="true" fill="currentColor">
-          <path d="M12 3L1 9l11 6 9-4.91V17h2V9L12 3zM5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
-        </svg>
-        <span>EduHub</span>
-      </div>
-
-      <nav class="navbar" id="navbar">
-        <ul class="nav-links">
-          <li><a href="#" class="active">Нүүр</a></li>
-          <li><a href="#gallery">Хичээлүүд</a></li>
-          <li><a href="#video-section">Медиа сан</a></li>
-        </ul>
-        <div class="header-actions">
-          <button id="themeToggle" class="btn-theme" aria-label="Сэдэв солих">
-            <span id="themeLabel">Dark Mode</span>
-          </button>
-        </div>
-      </nav>
+  <!-- Top View Mode Toolbar (Wireframe / Desktop Switcher) -->
+  <div class="wireframe-toolbar">
+    <span class="toolbar-title">Lab 06 Interactive Portal</span>
+    <div class="toolbar-btns">
+      <button class="tb-btn active" id="btnMobile">📱 Утасны Wireframe</button>
+      <button class="tb-btn" id="btnDesktop">💻 Бүтэн дэлгэц</button>
     </div>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero-section">
-    <div class="hero-content">
-      <h1>Мэдээллийн Технологийн Онлайн Сургалт</h1>
-      <p>Програмчлал, веб хөгжүүлэлт болон систем инженерчлэлийн чадвараа академик түвшинд ахиулаарай.</p>
-    </div>
-  </section>
-
-  <!-- Main Content Area -->
-  <div class="page-container">
-    <main class="main-content">
-      <div class="section-header" id="gallery">
-        <h2>Онцлох сургалтын модуль ба 3D галерей</h2>
-      </div>
-
-      <!-- Gallery Grid with 3D Flip Cards & Stagger Animation -->
-      <div class="gallery-grid">
-
-        <!-- Card 1 -->
-        <div class="flip-card" style="--i: 1;">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="img/photo1.jpg" alt="Веб хөгжүүлэлт" loading="lazy">
-              <div class="card-caption">
-                <h3>HTML5 & CSS3</h3>
-                <span class="badge">Front-End</span>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <h3>Дэлгэрэнгүй</h3>
-              <p>Семантик бүтэц, Flexbox болон Grid ашиглан адаптив вэб бүтээх.</p>
-              <button class="flip-btn">Буцах</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 2 -->
-        <div class="flip-card" style="--i: 2;">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="img/photo2.jpg" alt="Програмчлал" loading="lazy">
-              <div class="card-caption">
-                <h3>Python & Data</h3>
-                <span class="badge">Analytics</span>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <h3>Дэлгэрэнгүй</h3>
-              <p>NumPy, Pandas болон өгөгдөл боловсруулах практик курсууд.</p>
-              <button class="flip-btn">Буцах</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 3 -->
-        <div class="flip-card" style="--i: 3;">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="img/photo3.jpg" alt="Систем инженерчлэл" loading="lazy">
-              <div class="card-caption">
-                <h3>ESP32 IoT</h3>
-                <span class="badge">Hardware</span>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <h3>Дэлгэрэнгүй</h3>
-              <p>Мэдрэгч, OLED дэлгэц болон ухаалаг систем холболтын лаборатори.</p>
-              <button class="flip-btn">Буцах</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Card 4 -->
-        <div class="flip-card" style="--i: 4;">
-          <div class="flip-card-inner">
-            <div class="flip-card-front">
-              <img src="img/photo4.jpg" alt="Програм хангамж" loading="lazy">
-              <div class="card-caption">
-                <h3>Java & OOP</h3>
-                <span class="badge">Backend</span>
-              </div>
-            </div>
-            <div class="flip-card-back">
-              <h3>Дэлгэрэнгүй</h3>
-              <p>Объект хандлагат програмчлалын зарчим болон алгоритмын үндэс.</p>
-              <button class="flip-btn">Буцах</button>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Multimedia Section -->
-      <section id="video-section" class="multimedia-section">
-        <h2>Мультимедиа & Сургалтын Видео</h2>
-        
-        <div class="media-grid">
-          <div class="media-box">
-            <h3>Видео танилцуулга (HTML5 Video)</h3>
-            <video controls width="100%" poster="img/photo1.jpg">
-              <source src="video/clip.mp4" type="video/mp4">
-              <source src="video/clip.webm" type="video/webm">
-              <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол" default>
-              Таны хөтөч видеог дэмжихгүй байна.
-            </video>
-          </div>
-
-          <div class="media-box">
-            <h3>Онлайн лекц (iFrame Embedded)</h3>
-            <div class="iframe-container">
-              <iframe 
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-                title="Сургалтын видео" 
-                frameborder="0" 
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen>
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </main>
   </div>
 
-  <footer class="site-footer">
-    <p>&copy; 2026 EduHub - Мэдээллийн Технологийн Сургууль.</p>
-  </footer>
+  <!-- Viewport Wrapper -->
+  <div class="device-viewport phone-view" id="deviceViewport">
+    
+    <!-- Smartphone Mockup Frame -->
+    <div class="phone-mockup-frame">
+      <div class="phone-speaker-bar"></div>
+      
+      <div class="phone-screen-area">
+        
+        <!-- HEADER -->
+        <header class="site-header">
+          <div class="header-container">
+            <div class="logo">
+              <i class="fa-solid fa-graduation-cap"></i> EduHub
+            </div>
+            
+            <button class="menu-toggle" id="menuToggle" aria-label="Цэс нээх">
+              <i class="fa-solid fa-bars"></i>
+            </button>
 
-  <script src="script.js"></script>
+            <nav class="navbar" id="navbar">
+              <ul class="nav-links">
+                <li><a href="#" class="active">Нүүр</a></li>
+                <li><a href="#courses">Хичээлүүд</a></li>
+                <li><a href="#media-section">Медиа сан</a></li>
+              </ul>
+              <div class="header-actions">
+                <button class="btn-secondary">Нэвтрэх</button>
+                <button class="btn-primary">Бүртгүүлэх</button>
+              </div>
+            </nav>
+          </div>
+        </header>
+
+        <!-- HERO SECTION -->
+        <section class="hero-section">
+          <div class="hero-content">
+            <h1>Мэдээллийн Технологийн Онлайн Сургалт</h1>
+            <p>CSS3 3D Animation, Transform ба Мультимедиа нэгтгэсэн интерактив портал.</p>
+          </div>
+        </section>
+
+        <!-- MAIN CONTAINER -->
+        <div class="page-container" id="courses">
+          
+          <main class="main-content">
+            <div class="section-header">
+              <h2>Онцлох хичээлүүд (3D Flip Cards)</h2>
+            </div>
+            
+            <!-- 3D FLIP CARDS GRID (Lab 06 Requirement) -->
+            <div class="card-grid">
+              
+              <!-- Card 1 -->
+              <div class="flip-card" style="--i: 1;">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front bg-gradient-1">
+                    <div class="card-front-content">
+                      <i class="fa-brands fa-html5 card-icon"></i>
+                      <span class="card-tag">Front-End</span>
+                      <h3>HTML5 & CSS3</h3>
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>HTML5 & CSS3</h3>
+                    <p>Семантик бүтэц, Flexbox болон Grid ашиглан адаптив вэб сайт бүтээх.</p>
+                    <button class="flip-back-btn">Буцах</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="flip-card" style="--i: 2;">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front bg-gradient-2">
+                    <div class="card-front-content">
+                      <i class="fa-brands fa-python card-icon"></i>
+                      <span class="card-tag">Programming</span>
+                      <h3>Python Science</h3>
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Python Science</h3>
+                    <p>NumPy, Pandas болон өгөгдөл боловсруулах практик курсууд.</p>
+                    <button class="flip-back-btn">Буцах</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="flip-card" style="--i: 3;">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front bg-gradient-3">
+                    <div class="card-front-content">
+                      <i class="fa-solid fa-microchip card-icon"></i>
+                      <span class="card-tag">Hardware</span>
+                      <h3>ESP32 IoT</h3>
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>ESP32 IoT</h3>
+                    <p>Мэдрэгч, OLED дэлгэц болон ухаалаг систем холболтын лаборатори.</p>
+                    <button class="flip-back-btn">Буцах</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="flip-card" style="--i: 4;">
+                <div class="flip-card-inner">
+                  <div class="flip-card-front bg-gradient-4">
+                    <div class="card-front-content">
+                      <i class="fa-brands fa-java card-icon"></i>
+                      <span class="card-tag">Backend</span>
+                      <h3>Java & ООП</h3>
+                    </div>
+                  </div>
+                  <div class="flip-card-back">
+                    <h3>Java & ООП</h3>
+                    <p>Объект хандлагат програмчлалын зарчим болон алгоритмын суурь мэдлэг.</p>
+                    <button class="flip-back-btn">Буцах</button>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- MULTIMEDIA SECTION (Lab 06 Requirement) -->
+            <section id="media-section" class="multimedia-section">
+              <h2>Мультимедиа & Сургалтын Видео</h2>
+              
+              <div class="media-grid">
+                <!-- HTML5 Video element -->
+                <div class="media-box">
+                  <h3>Видео танилцуулга</h3>
+                  <video controls width="100%">
+                    <source src="video/clip.mp4" type="video/mp4">
+                    <source src="video/clip.webm" type="video/webm">
+                    <track src="video/clip.mn.vtt" kind="subtitles" srclang="mn" label="Монгол" default>
+                    Таны хөтөч видеог дэмжихгүй байна.
+                  </video>
+                </div>
+
+                <!-- Responsive iFrame (YouTube Embed) -->
+                <div class="media-box">
+                  <h3>Онлайн лекц (iFrame)</h3>
+                  <div class="iframe-container">
+                    <iframe 
+                      src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+                      title="Сургалтын видео" 
+                      frameborder="0" 
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </main>
+
+          <!-- SIDEBAR -->
+          <aside class="sidebar">
+            <div class="sidebar-widget">
+              <h3><i class="fa-solid fa-bullhorn"></i> Сургалтын зар мэдээ</h3>
+              <ul class="widget-list">
+                <li>
+                  <span class="date">10 Сар 12</span>
+                  <p>Лаборатори 06 анимацийн шаардлага нэмэгдлээ.</p>
+                </li>
+                <li>
+                  <span class="date">10 Сар 10</span>
+                  <p>3D Flip card болон Multimedia интеграци.</p>
+                </li>
+              </ul>
+            </div>
+          </aside>
+
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="site-footer">
+          <p>&copy; 2026 Мэдээллийн Технологийн Сургууль. Lab 06.</p>
+        </footer>
+
+      </div>
+      
+      <div class="phone-home-bar"></div>
+    </div> <!-- End Mockup Frame -->
+
+  </div> <!-- End Viewport -->
+
+  <!-- SCRIPTS -->
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navbar = document.getElementById('navbar');
+
+    menuToggle.addEventListener('click', () => {
+      navbar.classList.toggle('nav-open');
+    });
+
+    const btnMobile = document.getElementById('btnMobile');
+    const btnDesktop = document.getElementById('btnDesktop');
+    const deviceViewport = document.getElementById('deviceViewport');
+
+    btnMobile.addEventListener('click', () => {
+      deviceViewport.classList.remove('desktop-view');
+      deviceViewport.classList.add('phone-view');
+      btnMobile.classList.add('active');
+      btnDesktop.classList.remove('active');
+    });
+
+    btnDesktop.addEventListener('click', () => {
+      deviceViewport.classList.remove('phone-view');
+      deviceViewport.classList.add('desktop-view');
+      btnDesktop.classList.add('active');
+      btnMobile.classList.remove('active');
+    });
+
+    // Mobile / Touch support for 3D flip card toggle button
+    document.querySelectorAll('.flip-back-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const card = btn.closest('.flip-card');
+        card.classList.toggle('is-flipped');
+      });
+    });
+  </script>
 </body>
 </html>
