@@ -1,29 +1,29 @@
 :root {
-  --bg-main: #0d0a1a;
-  --bg-header: #15102a;
-  --bg-card: #1c1538;
-  --bg-card-hover: #261d4a;
-  --text-color: #ffffff;
-  --text-muted: #a39bb8;
-  --accent: #9333ea;
-  --accent-light: #c084fc;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --card-gradient: linear-gradient(135deg, #a855f7 0%, #7e22ce 50%, #4c1d95 100%);
-  --shadow-glow: 0 8px 25px rgba(147, 51, 234, 0.25);
+  /* Dark Mode: Хар - Ягаан өнгөний хослол */
+  --bg-main: #0c0816;
+  --bg-header: #140e24;
+  --bg-card: #1c1333;
+  --text-color: #f3e8ff;
+  --text-muted: #c084fc;
+  --accent: #a855f7;
+  --accent-light: #d8b4fe;
+  --border-color: rgba(168, 85, 247, 0.2);
+  --card-gradient: linear-gradient(135deg, #7e22ce 0%, #581c87 50%, #3b0764 100%);
+  --shadow-glow: 0 8px 25px rgba(126, 34, 206, 0.3);
 }
 
 [data-theme="light"] {
-  --bg-main: #f5f3ff;
-  --bg-header: #ffffff;
+  /* Light Mode: Цагаан - Цэнхэр өнгөний хослол (Цагаан дээр гаргахын тулд тод, гарган харагдах болгов) */
+  --bg-main: #f0f6ff;
+  --bg-header: #e0ecff;
   --bg-card: #ffffff;
-  --bg-card-hover: #f3e8ff;
-  --text-color: #1e1b4b;
-  --text-muted: #6b21a8;
-  --accent: #7e22ce;
-  --accent-light: #9333ea;
-  --border-color: rgba(126, 34, 206, 0.15);
-  --card-gradient: linear-gradient(135deg, #c084fc 0%, #9333ea 50%, #6b21a8 100%);
-  --shadow-glow: 0 8px 25px rgba(126, 34, 206, 0.15);
+  --text-color: #0f172a;
+  --text-muted: #2563eb;
+  --accent: #2563eb;
+  --accent-light: #1d4ed8;
+  --border-color: rgba(37, 99, 235, 0.2);
+  --card-gradient: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 50%, #1e3a8a 100%);
+  --shadow-glow: 0 8px 25px rgba(37, 99, 235, 0.15);
 }
 
 * {
@@ -65,7 +65,7 @@ body {
 }
 
 .tb-btn {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--bg-card);
   border: 1px solid var(--border-color);
   color: var(--text-color);
   padding: 6px 14px;
@@ -94,9 +94,9 @@ body {
 .device-viewport.phone-view .phone-mockup-frame {
   max-width: 420px;
   width: 100%;
-  border: 12px solid #231b42;
+  border: 12px solid #1c1333;
   border-radius: 40px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
   background-color: var(--bg-main);
   overflow: hidden;
   position: relative;
@@ -105,17 +105,19 @@ body {
 .phone-speaker-bar {
   width: 60px;
   height: 5px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--text-muted);
   border-radius: 10px;
   margin: 10px auto;
+  opacity: 0.5;
 }
 
 .phone-home-bar {
   width: 120px;
   height: 4px;
-  background-color: rgba(255, 255, 255, 0.2);
+  background-color: var(--text-muted);
   border-radius: 10px;
   margin: 12px auto;
+  opacity: 0.5;
 }
 
 .device-viewport.desktop-view .phone-mockup-frame {
@@ -149,14 +151,14 @@ body {
 .logo {
   font-size: 1.3rem;
   font-weight: 800;
-  color: #ffffff;
+  color: var(--text-color);
   display: flex;
   align-items: center;
   gap: 8px;
 }
 
 .logo i {
-  color: var(--accent-light);
+  color: var(--accent);
 }
 
 .menu-toggle {
@@ -194,7 +196,7 @@ body {
 }
 
 .nav-links a.active, .nav-links a:hover {
-  color: var(--accent-light);
+  color: var(--accent);
 }
 
 .header-actions {
@@ -233,6 +235,7 @@ body {
   font-size: 1.6rem;
   margin-bottom: 10px;
   font-weight: 800;
+  color: var(--text-color);
 }
 
 .hero-content p {
@@ -254,6 +257,7 @@ body {
   font-size: 1.2rem;
   margin-bottom: 18px;
   font-weight: 700;
+  color: var(--text-color);
 }
 
 /* 3D Flip Card Grid */
@@ -291,15 +295,19 @@ body {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 16px;
-  padding: 20px;
   box-shadow: var(--shadow-glow);
+  overflow: hidden;
+}
+
+/* Front card layout */
+.flip-card-front {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 20px;
 }
 
-/* Ижил өнгөтэй 4 карт */
 .card-bg-unified {
   background: var(--card-gradient);
   border: 1px solid rgba(255, 255, 255, 0.2);
@@ -315,7 +323,6 @@ body {
   width: 100%;
 }
 
-/* Лого зурагтай контейнер */
 .card-icon-container {
   width: 72px;
   height: 72px;
@@ -327,14 +334,12 @@ body {
   align-items: center;
   justify-content: center;
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
-  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
 .tech-card-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
 .card-tag {
@@ -345,7 +350,6 @@ body {
   font-weight: 700;
   margin-bottom: 8px;
   color: #ffffff;
-  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
   letter-spacing: 0.5px;
 }
 
@@ -356,24 +360,52 @@ body {
   text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
+/* Back card layout with background image overlay */
 .flip-card-back {
-  background-color: var(--bg-card);
-  color: var(--text-color);
-  border: 1px solid var(--border-color);
   transform: rotateY(180deg);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
+  position: relative;
 }
 
-.flip-card-back h3 {
+.back-bg-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.35);
+  z-index: 1;
+}
+
+.back-content-overlay {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  color: #ffffff;
+}
+
+.back-content-overlay h3 {
   font-size: 1.1rem;
-  font-weight: 700;
+  font-weight: 800;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
 }
 
-.flip-card-back p {
+.back-content-overlay p {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: #f1f5f9;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 
 .flip-back-btn {
@@ -384,12 +416,16 @@ body {
   border-radius: 8px;
   font-weight: 600;
   cursor: pointer;
-  align-self: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
 
 /* Multimedia & Sidebar */
 .multimedia-section {
   margin-top: 25px;
+}
+
+.multimedia-section h2 {
+  color: var(--text-color);
 }
 
 .media-grid {
@@ -409,6 +445,7 @@ body {
 .media-box h3 {
   font-size: 1rem;
   margin-bottom: 10px;
+  color: var(--text-color);
 }
 
 .iframe-container {
@@ -440,7 +477,7 @@ body {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: var(--accent-light);
+  color: var(--accent);
 }
 
 .widget-list {
@@ -455,14 +492,15 @@ body {
 
 .widget-list .date {
   font-size: 0.75rem;
-  color: var(--accent-light);
+  color: var(--accent);
   font-weight: 700;
 }
 
 .widget-list p {
   font-size: 0.85rem;
-  color: var(--text-muted);
+  color: var(--text-color);
   margin-top: 2px;
+  opacity: 0.85;
 }
 
 .site-footer {
@@ -473,7 +511,7 @@ body {
   color: var(--text-muted);
 }
 
-/* Responsive (Desktop) */
+/* Responsive Desktop */
 @media (min-width: 768px) {
   .menu-toggle {
     display: none;

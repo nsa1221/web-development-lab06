@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const flipCards = document.querySelectorAll('.flip-card');
 
-  // Dark / Light Mode
+  // Dark / Light Mode Toggle
   themeToggleBtn.addEventListener('click', () => {
     const currentTheme = htmlTag.getAttribute('data-theme');
     
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // Viewport Switcher (Mobile / Desktop)
+  // Viewport Switcher
   btnMobile.addEventListener('click', () => {
     deviceViewport.classList.remove('desktop-view');
     deviceViewport.classList.add('phone-view');
@@ -43,12 +43,12 @@ document.addEventListener('DOMContentLoaded', () => {
     btnMobile.classList.remove('active');
   });
 
-  // Mobile Menu
+  // Mobile Menu Toggle
   menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('open');
   });
 
-  // 3D Flip Card Click support
+  // 3D Flip Card Flip Action
   flipCards.forEach(card => {
     const backBtn = card.querySelector('.flip-back-btn');
 
