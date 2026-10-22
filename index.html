@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Лаборатори 06 - EduHub Dark/Light Mode Portal</title>
+  <title>EduHub Interactive Portal</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -13,7 +13,6 @@
   <div class="wireframe-toolbar">
     <span class="toolbar-title">Lab 06 Interactive Portal</span>
     <div class="toolbar-btns">
-      <!-- Dark/Light Mode Switcher -->
       <button class="tb-btn theme-toggle-btn" id="themeToggleBtn">
         <i class="fa-solid fa-moon" id="themeIcon"></i> <span id="themeText">Dark Mode: ON</span>
       </button>
@@ -24,8 +23,6 @@
 
   <!-- Viewport Wrapper -->
   <div class="device-viewport phone-view" id="deviceViewport">
-    
-    <!-- Smartphone Mockup Frame -->
     <div class="phone-mockup-frame">
       <div class="phone-speaker-bar"></div>
       
@@ -35,7 +32,10 @@
         <header class="site-header">
           <div class="header-container">
             <div class="logo">
-              <i class="fa-solid fa-graduation-cap"></i> EduHub
+              <!-- Брэнд лого зураг эсвэл икон -->
+              <img src="images/logo.png" alt="EduHub Logo" class="brand-logo-img" onerror="this.style.display='none'">
+              <i class="fa-solid fa-graduation-cap"></i>
+              <span>EduHub</span>
             </div>
             
             <button class="menu-toggle" id="menuToggle" aria-label="Цэс нээх">
@@ -75,12 +75,16 @@
             <!-- 3D FLIP CARDS GRID -->
             <div class="card-grid">
               
-              <!-- Card 1 -->
-              <div class="flip-card" style="--i: 1;">
+              <!-- Card 1: HTML5 & CSS3 -->
+              <div class="flip-card">
                 <div class="flip-card-inner">
-                  <div class="flip-card-front bg-gradient-1">
+                  <div class="flip-card-front card-bg-unified">
                     <div class="card-front-content">
-                      <i class="fa-brands fa-html5 card-icon"></i>
+                      <div class="icon-wrapper">
+                        <!-- Зураг эсвэл FontAwesome икон -->
+                        <img src="images/html5.png" alt="HTML5" class="tech-icon-img" onerror="this.style.display='none'">
+                        <i class="fa-brands fa-html5 card-icon"></i>
+                      </div>
                       <span class="card-tag">Front-End</span>
                       <h3>HTML5 & CSS3</h3>
                     </div>
@@ -93,12 +97,15 @@
                 </div>
               </div>
 
-              <!-- Card 2 -->
-              <div class="flip-card" style="--i: 2;">
+              <!-- Card 2: Python Science -->
+              <div class="flip-card">
                 <div class="flip-card-inner">
-                  <div class="flip-card-front bg-gradient-2">
+                  <div class="flip-card-front card-bg-unified">
                     <div class="card-front-content">
-                      <i class="fa-brands fa-python card-icon"></i>
+                      <div class="icon-wrapper">
+                        <img src="images/python.png" alt="Python" class="tech-icon-img" onerror="this.style.display='none'">
+                        <i class="fa-brands fa-python card-icon"></i>
+                      </div>
                       <span class="card-tag">Programming</span>
                       <h3>Python Science</h3>
                     </div>
@@ -111,12 +118,15 @@
                 </div>
               </div>
 
-              <!-- Card 3 -->
-              <div class="flip-card" style="--i: 3;">
+              <!-- Card 3: ESP32 IoT -->
+              <div class="flip-card">
                 <div class="flip-card-inner">
-                  <div class="flip-card-front bg-gradient-3">
+                  <div class="flip-card-front card-bg-unified">
                     <div class="card-front-content">
-                      <i class="fa-solid fa-microchip card-icon"></i>
+                      <div class="icon-wrapper">
+                        <img src="images/esp32.png" alt="ESP32" class="tech-icon-img" onerror="this.style.display='none'">
+                        <i class="fa-solid fa-microchip card-icon"></i>
+                      </div>
                       <span class="card-tag">Hardware</span>
                       <h3>ESP32 IoT</h3>
                     </div>
@@ -129,12 +139,15 @@
                 </div>
               </div>
 
-              <!-- Card 4 -->
-              <div class="flip-card" style="--i: 4;">
+              <!-- Card 4: Java & ООП -->
+              <div class="flip-card">
                 <div class="flip-card-inner">
-                  <div class="flip-card-front bg-gradient-4">
+                  <div class="flip-card-front card-bg-unified">
                     <div class="card-front-content">
-                      <i class="fa-brands fa-java card-icon"></i>
+                      <div class="icon-wrapper">
+                        <img src="images/java.png" alt="Java" class="tech-icon-img" onerror="this.style.display='none'">
+                        <i class="fa-brands fa-java card-icon"></i>
+                      </div>
                       <span class="card-tag">Backend</span>
                       <h3>Java & ООП</h3>
                     </div>
@@ -188,7 +201,7 @@
               <ul class="widget-list">
                 <li>
                   <span class="date">10 Сар 12</span>
-                  <p>Dark mode (Хар/Ягаан) болон Light mode (Цэнхэр/Шаргал) шилжүүлэгч нэмэгдлээ.</p>
+                  <p>Dark mode болон Light mode шилжүүлэгч нэмэгдлээ.</p>
                 </li>
                 <li>
                   <span class="date">10 Сар 10</span>
@@ -209,7 +222,6 @@
       
       <div class="phone-home-bar"></div>
     </div>
-
   </div>
 
   <script src="script.js"></script>
