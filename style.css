@@ -1,68 +1,62 @@
-/* ==========================================
-   1. ҮНДСЭН ХУВЬСАГЧИД (VARIABLES & THEMES)
-   ========================================== */
 :root {
-  --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --bg-card: #1e1b4b;
-  --text-main: #f8fafc;
-  --text-muted: #94a3b8;
-  --accent-color: #6366f1;
-  --accent-hover: #4f46e5;
+  --bg-main: #0d0a1a;
+  --bg-header: #15102a;
+  --bg-card: #1c1538;
+  --bg-card-hover: #261d4a;
+  --text-color: #ffffff;
+  --text-muted: #a39bb8;
+  --accent: #9333ea;
+  --accent-light: #c084fc;
   --border-color: rgba(255, 255, 255, 0.1);
-  --card-gradient: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
-  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+  --card-gradient: linear-gradient(135deg, #a855f7 0%, #7e22ce 50%, #4c1d95 100%);
+  --shadow-glow: 0 8px 25px rgba(147, 51, 234, 0.25);
 }
 
 [data-theme="light"] {
-  --bg-primary: #f8fafc;
-  --bg-secondary: #ffffff;
+  --bg-main: #f5f3ff;
+  --bg-header: #ffffff;
   --bg-card: #ffffff;
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-  --accent-color: #2563eb;
-  --accent-hover: #1d4ed8;
-  --border-color: #e2e8f0;
-  --card-gradient: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #60a5fa 100%);
-  --shadow-lg: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+  --bg-card-hover: #f3e8ff;
+  --text-color: #1e1b4b;
+  --text-muted: #6b21a8;
+  --accent: #7e22ce;
+  --accent-light: #9333ea;
+  --border-color: rgba(126, 34, 206, 0.15);
+  --card-gradient: linear-gradient(135deg, #c084fc 0%, #9333ea 50%, #6b21a8 100%);
+  --shadow-glow: 0 8px 25px rgba(126, 34, 206, 0.15);
 }
 
-/* ==========================================
-   2. ЕРӨНХИЙ СТИЛЬ (GLOBAL STYLES)
-   ========================================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--bg-primary);
-  color: var(--text-main);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  line-height: 1.6;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--bg-main);
+  color: var(--text-color);
+  min-height: 100vh;
 }
 
-/* ==========================================
-   3. WIREFRAME TOOLBAR
-   ========================================== */
+/* Toolbar */
 .wireframe-toolbar {
+  background-color: var(--bg-header);
+  border-bottom: 1px solid var(--border-color);
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 12px 24px;
-  background-color: var(--bg-secondary);
-  border-bottom: 1px solid var(--border-color);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
 }
 
 .toolbar-title {
   font-weight: 700;
-  font-size: 1.1rem;
+  color: var(--text-color);
+  font-size: 1rem;
 }
 
 .toolbar-btns {
@@ -71,48 +65,47 @@ body {
 }
 
 .tb-btn {
-  padding: 8px 16px;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid var(--border-color);
-  background: var(--bg-primary);
-  color: var(--text-main);
+  color: var(--text-color);
+  padding: 6px 14px;
+  border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
-  transition: all 0.2s ease;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 .tb-btn:hover, .tb-btn.active {
-  background-color: var(--accent-color);
+  background-color: var(--accent);
   color: #ffffff;
-  border-color: var(--accent-color);
+  border-color: var(--accent);
 }
 
-/* ==========================================
-   4. DEVICE VIEWPORT (PHONE MOCKUP FRAME)
-   ========================================== */
+/* Viewport Mockup */
 .device-viewport {
   padding: 20px;
   display: flex;
   justify-content: center;
-  transition: all 0.4s ease;
 }
 
-/* Телефон харагдац (Phone view) */
 .device-viewport.phone-view .phone-mockup-frame {
-  width: 100%;
   max-width: 420px;
-  border: 12px solid #334155;
-  border-radius: 36px;
-  box-shadow: var(--shadow-lg);
+  width: 100%;
+  border: 12px solid #231b42;
+  border-radius: 40px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  background-color: var(--bg-main);
   overflow: hidden;
-  background-color: var(--bg-primary);
   position: relative;
 }
 
 .phone-speaker-bar {
   width: 60px;
-  height: 6px;
-  background-color: #475569;
+  height: 5px;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
   margin: 10px auto;
 }
@@ -120,18 +113,18 @@ body {
 .phone-home-bar {
   width: 120px;
   height: 4px;
-  background-color: #475569;
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  margin: 10px auto;
+  margin: 12px auto;
 }
 
-/* Компьютер харагдац (Desktop view) */
 .device-viewport.desktop-view .phone-mockup-frame {
+  max-width: 1100px;
   width: 100%;
-  max-width: 1200px;
   border: none;
-  border-radius: 0;
+  border-radius: 16px;
   box-shadow: none;
+  background-color: var(--bg-main);
 }
 
 .device-viewport.desktop-view .phone-speaker-bar,
@@ -139,13 +132,11 @@ body {
   display: none;
 }
 
-/* ==========================================
-   5. HEADER & NAVBAR
-   ========================================== */
+/* Header */
 .site-header {
-  background-color: var(--bg-secondary);
+  background-color: var(--bg-header);
   border-bottom: 1px solid var(--border-color);
-  padding: 16px;
+  padding: 16px 20px;
 }
 
 .header-container {
@@ -156,23 +147,22 @@ body {
 }
 
 .logo {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #ffffff;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.25rem;
-  font-weight: 800;
-  color: var(--accent-color);
+  gap: 8px;
 }
 
-.brand-logo-img {
-  height: 32px;
-  width: auto;
+.logo i {
+  color: var(--accent-light);
 }
 
 .menu-toggle {
   background: none;
   border: none;
-  color: var(--text-main);
+  color: var(--text-color);
   font-size: 1.4rem;
   cursor: pointer;
   display: block;
@@ -181,9 +171,9 @@ body {
 .navbar {
   display: none;
   width: 100%;
+  margin-top: 15px;
   flex-direction: column;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 15px;
 }
 
 .navbar.open {
@@ -194,7 +184,7 @@ body {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 10px;
 }
 
 .nav-links a {
@@ -204,7 +194,7 @@ body {
 }
 
 .nav-links a.active, .nav-links a:hover {
-  color: var(--accent-color);
+  color: var(--accent-light);
 }
 
 .header-actions {
@@ -214,64 +204,65 @@ body {
 
 .btn-primary, .btn-secondary {
   padding: 8px 16px;
-  border-radius: 6px;
-  border: none;
-  cursor: pointer;
+  border-radius: 8px;
   font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border: none;
 }
 
 .btn-primary {
-  background-color: var(--accent-color);
-  color: #fff;
+  background-color: var(--accent);
+  color: #ffffff;
 }
 
 .btn-secondary {
   background-color: transparent;
-  color: var(--text-main);
+  color: var(--text-color);
   border: 1px solid var(--border-color);
 }
 
-/* ==========================================
-   6. HERO SECTION
-   ========================================== */
+/* Hero Section */
 .hero-section {
-  padding: 40px 20px;
+  padding: 35px 20px;
   text-align: center;
-  background: linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
+  background: linear-gradient(180deg, var(--bg-header) 0%, var(--bg-main) 100%);
 }
 
 .hero-content h1 {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
+  font-size: 1.6rem;
+  margin-bottom: 10px;
+  font-weight: 800;
 }
 
 .hero-content p {
   color: var(--text-muted);
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 
-/* ==========================================
-   7. MAIN CONTENT & 3D FLIP CARDS
-   ========================================== */
+/* Page Container */
 .page-container {
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 24px;
+  gap: 25px;
 }
 
 .section-header h2 {
-  font-size: 1.3rem;
-  margin-bottom: 20px;
+  font-size: 1.2rem;
+  margin-bottom: 18px;
+  font-weight: 700;
 }
 
+/* 3D Flip Card Grid */
 .card-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 18px;
 }
 
-/* 3D Flip Card анимац */
 .flip-card {
   background-color: transparent;
   height: 220px;
@@ -301,83 +292,123 @@ body {
   backface-visibility: hidden;
   border-radius: 16px;
   padding: 20px;
+  box-shadow: var(--shadow-glow);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: var(--shadow-lg);
 }
 
+/* Ижил өнгөтэй 4 карт */
 .card-bg-unified {
   background: var(--card-gradient);
-  border: 1px solid var(--border-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   color: #ffffff;
 }
 
-.icon-wrapper {
-  width: 56px;
-  height: 56px;
-  margin-bottom: 8px;
+.card-front-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+/* Лого зурагтай контейнер */
+.card-icon-container {
+  width: 72px;
+  height: 72px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 16px;
+  padding: 12px;
+  margin-bottom: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+  border: 2px solid rgba(255, 255, 255, 0.8);
 }
 
-.card-icon {
-  font-size: 2.5rem;
-  color: #ffffff;
-}
-
-.tech-icon-img {
+.tech-card-image {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.15));
 }
 
 .card-tag {
-  background: rgba(255, 255, 255, 0.2);
-  padding: 2px 10px;
-  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.25);
+  padding: 3px 12px;
+  border-radius: 20px;
   font-size: 0.75rem;
-  margin-bottom: 6px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+  letter-spacing: 0.5px;
+}
+
+.card-front-content h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
 .flip-card-back {
-  background-color: var(--bg-secondary);
-  color: var(--text-main);
+  background-color: var(--bg-card);
+  color: var(--text-color);
   border: 1px solid var(--border-color);
   transform: rotateY(180deg);
+  display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
-.flip-back-btn {
-  padding: 6px 14px;
-  background-color: var(--accent-color);
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  cursor: pointer;
+.flip-card-back h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
 }
 
-/* ==========================================
-   8. MULTIMEDIA & SIDEBAR & FOOTER
-   ========================================== */
+.flip-card-back p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.flip-back-btn {
+  background-color: var(--accent);
+  color: #ffffff;
+  border: none;
+  padding: 6px 16px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  align-self: center;
+}
+
+/* Multimedia & Sidebar */
 .multimedia-section {
-  margin-top: 30px;
+  margin-top: 25px;
 }
 
 .media-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
-  margin-top: 16px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
 .media-box {
-  background-color: var(--bg-secondary);
-  padding: 16px;
+  background-color: var(--bg-card);
+  padding: 15px;
   border-radius: 12px;
   border: 1px solid var(--border-color);
+}
+
+.media-box h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
 }
 
 .iframe-container {
@@ -397,40 +428,52 @@ body {
 }
 
 .sidebar-widget {
-  background-color: var(--bg-secondary);
-  padding: 20px;
+  background-color: var(--bg-card);
+  padding: 18px;
   border-radius: 12px;
   border: 1px solid var(--border-color);
 }
 
+.sidebar-widget h3 {
+  font-size: 1rem;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--accent-light);
+}
+
 .widget-list {
   list-style: none;
-  margin-top: 12px;
 }
 
 .widget-list li {
-  margin-bottom: 12px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
   border-bottom: 1px solid var(--border-color);
-  padding-bottom: 8px;
 }
 
 .widget-list .date {
   font-size: 0.75rem;
-  color: var(--accent-color);
-  font-weight: bold;
+  color: var(--accent-light);
+  font-weight: 700;
+}
+
+.widget-list p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 2px;
 }
 
 .site-footer {
   text-align: center;
-  padding: 20px;
+  padding: 18px;
   border-top: 1px solid var(--border-color);
-  font-size: 0.85rem;
+  font-size: 0.8rem;
   color: var(--text-muted);
 }
 
-/* ==========================================
-   9. DESKTOP MEDIA QUERIES
-   ========================================== */
+/* Responsive (Desktop) */
 @media (min-width: 768px) {
   .menu-toggle {
     display: none;
@@ -442,12 +485,12 @@ body {
     width: auto;
     margin-top: 0;
     align-items: center;
-    gap: 24px;
+    gap: 20px;
   }
 
   .nav-links {
     flex-direction: row;
-    gap: 20px;
+    gap: 18px;
   }
 
   .card-grid {

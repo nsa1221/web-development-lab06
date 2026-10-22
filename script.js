@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // DOM Elements
   const themeToggleBtn = document.getElementById('themeToggleBtn');
   const themeIcon = document.getElementById('themeIcon');
   const themeText = document.getElementById('themeText');
@@ -14,9 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   const flipCards = document.querySelectorAll('.flip-card');
 
-  // ==========================================
-  // 1. DARK / LIGHT MODE TOGGLE
-  // ==========================================
+  // Dark / Light Mode
   themeToggleBtn.addEventListener('click', () => {
     const currentTheme = htmlTag.getAttribute('data-theme');
     
@@ -31,9 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   });
 
-  // ==========================================
-  // 2. VIEWPORT SWITCHER (MOBILE / DESKTOP)
-  // ==========================================
+  // Viewport Switcher (Mobile / Desktop)
   btnMobile.addEventListener('click', () => {
     deviceViewport.classList.remove('desktop-view');
     deviceViewport.classList.add('phone-view');
@@ -48,22 +43,16 @@ document.addEventListener('DOMContentLoaded', () => {
     btnMobile.classList.remove('active');
   });
 
-  // ==========================================
-  // 3. MOBILE MENU TOGGLE
-  // ==========================================
+  // Mobile Menu
   menuToggle.addEventListener('click', () => {
     navbar.classList.toggle('open');
   });
 
-  // ==========================================
-  // 4. TOUCH / CLICK SUPPORT FOR 3D FLIP CARDS
-  // ==========================================
+  // 3D Flip Card Click support
   flipCards.forEach(card => {
     const backBtn = card.querySelector('.flip-back-btn');
 
-    // Карт дээр дарахад эргүүлэх
     card.addEventListener('click', (e) => {
-      // Хэрэв "Буцах" товчийг дарсан бол
       if (e.target === backBtn) {
         card.classList.remove('flipped');
       } else {
@@ -72,5 +61,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-```<ElicitationsGroup>
-</ElicitationsGroup>
